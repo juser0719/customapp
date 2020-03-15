@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,8 +17,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class MainActivity extends AppCompatActivity {
     private String WIFFLE = "miFU2Mn2ZrUcSgyhmAxLMjgDJAr2";
     private String HODDUK = "jqG9AZCtJBfm8wCsPTgnf332dWB3";
-    private TextView wiffle_open;
-    private TextView hodduk_open;
+    private ImageView wiffle_open;
+    private ImageView hodduk_open;
     private static final String TAG = "MainActivity";
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference Ref_wiffle = db.collection("open").document(WIFFLE);
@@ -26,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        wiffle_open = (TextView)findViewById(R.id.wiffle);
-        hodduk_open = (TextView)findViewById(R.id.hodduk);
+        wiffle_open = (ImageView)findViewById(R.id.wiffle);
+        hodduk_open = (ImageView)findViewById(R.id.hodduk);
 
         Ref_wiffle.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -38,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
                         Boolean open =(Boolean) document.get("open");
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         if(open){
-                            wiffle_open.setText("오와열 :)");
+                            wiffle_open.setImageResource(R.drawable.wiffle_open);
                         }
                         else {
-                            wiffle_open.setText("오와닫 :(");
+                            wiffle_open.setImageResource(R.drawable.close);
                         }
                     } else {
                         Log.d(TAG, "No such document");
@@ -61,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
                         Boolean open =(Boolean) document.get("open");
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         if(open){
-                            hodduk_open.setText("홌!!");
+                            hodduk_open.setImageResource(R.drawable.hodduk_open);
                         }
                         else {
-                            hodduk_open.setText("홊ㅜ");
+                            hodduk_open.setImageResource(R.drawable.close);
                         }
                     } else {
                         Log.d(TAG, "No such document");

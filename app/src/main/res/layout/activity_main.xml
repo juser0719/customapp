@@ -6,20 +6,23 @@
     android:gravity="center"
     android:weightSum="2">
 
-    <TextView
+    <ImageView
         android:id="@+id/wiffle"
+        android:src="@drawable/loading"
         android:layout_weight="1"
         android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
-    <TextView
+        />
+
+    <ImageView
         android:id="@+id/hodduk"
         android:layout_weight="1"
+        android:src="@drawable/loading"
         android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Hello World!" />
 
 </LinearLayout>
