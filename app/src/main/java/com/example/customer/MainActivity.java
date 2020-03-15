@@ -3,6 +3,7 @@ package com.example.customer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -39,10 +40,13 @@ public class MainActivity extends AppCompatActivity {
                         Boolean open =(Boolean) document.get("open");
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         if(open){
-                            wiffle_open.setImageResource(R.drawable.wiffle_open);
+                            wiffle_open.setImageResource(R.drawable.open_wiffle);
+                            wiffle_open.setBackgroundColor(Color.rgb(240,227,182));
+
                         }
                         else {
                             wiffle_open.setImageResource(R.drawable.close);
+                            wiffle_open.setBackgroundColor(Color.rgb(212,231,241));
                         }
                     } else {
                         Log.d(TAG, "No such document");
@@ -62,10 +66,12 @@ public class MainActivity extends AppCompatActivity {
                         Boolean open =(Boolean) document.get("open");
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         if(open){
-                            hodduk_open.setImageResource(R.drawable.hodduk_open);
+                            hodduk_open.setImageResource(R.drawable.open_hodduk);
+                            hodduk_open.setBackgroundColor(Color.rgb(246,214,127));
                         }
                         else {
-                            hodduk_open.setImageResource(R.drawable.close);
+                            hodduk_open.setImageResource(R.drawable.closed);
+                            hodduk_open.setBackgroundColor(Color.rgb(212,231,241));
                         }
                     } else {
                         Log.d(TAG, "No such document");
