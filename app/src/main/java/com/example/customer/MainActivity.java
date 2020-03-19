@@ -42,10 +42,9 @@ public class MainActivity extends AppCompatActivity {
                         if(open){
                             wiffle_open.setImageResource(R.drawable.open_wiffle);
                             wiffle_open.setBackgroundColor(Color.rgb(240,227,182));
-
                         }
                         else {
-                            wiffle_open.setImageResource(R.drawable.close);
+                            wiffle_open.setImageResource(R.drawable.close_wiffle);
                             wiffle_open.setBackgroundColor(Color.rgb(212,231,241));
                         }
                     } else {
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                             hodduk_open.setBackgroundColor(Color.rgb(246,214,127));
                         }
                         else {
-                            hodduk_open.setImageResource(R.drawable.closed);
+                            hodduk_open.setImageResource(R.drawable.close_hodduk);
                             hodduk_open.setBackgroundColor(Color.rgb(212,231,241));
                         }
                     } else {
